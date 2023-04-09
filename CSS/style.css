@@ -724,20 +724,23 @@ html, body {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	align-items: stretch;
 }
 .services_limiter_flex_item {
 	flex: 0 0 20%;
-	margin: 10px;
+	padding: 13px 13px 18px;
+	margin: 0 10px;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
 	background: #FFFFFF;
 	box-shadow: 12px 12px 50px rgba(0, 0, 0, 0.1);
 	border-radius: 24px;
-	padding: 13px 13px 18px;
 	transition: all 0.3s;
 	position: relative;
+}
+.services_limiter_flex_item > *:not(:last-child) {
+	flex: 0 0 100%;
 }
 .services_limiter_flex_item:hover {
 	transform: translate(0, -15px);
@@ -758,17 +761,19 @@ html, body {
 	opacity: 1;
 }
 .services_limiter_flex_item-background {
-	min-width: 91.18644%;
-	height: auto;
+	width: 269px;
+	height: 210px;
 	margin: 0 0 19px 0;
 }
 .services_limiter_flex_item-text {
+	text-align: center;
 	font-size: 20px;
 	line-height: 24px;
 	font-weight: 600;
 	margin: 0 0 17px 0;
 }
 .services_limiter_flex_item-link {
+	align-self: flex-end;
 	padding: 9px 26px;
 	font-size: 14px;
 	color: #939393;
@@ -784,9 +789,12 @@ html, body {
 	background: #EC1D51;
 }
 @media (width<769px) {
+	.services {
+		padding: 50px 20px 0;
+	}
 	.services_limiter_flex {
-		margin: -18px 0 -50px 0;
 		flex-wrap: nowrap;
+		padding: 12px 0 50px;
 		justify-content: flex-start;
 		overflow: auto;
 		min-height: 435px;
@@ -1003,15 +1011,19 @@ html, body {
 .price_limiter_flex_item {
 	flex: 0 0 400px;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: center;
 	padding: 75px 66px;
 	background: #FFFFFF;
 	box-shadow: 12px 12px 50px rgba(0, 0, 0, 0.1);
 	border-radius: 24px;
 	text-align: center;
 }
+.price_limiter_flex_item > * :not(:last-child) {
+	flex: 0 0 100%;
+}
 .price_limiter_flex_item-title {
+	flex: 0 0 100%;
 	font-size: 24px;
 	line-height: 29px;
 	margin: 0 0 30px 0;
@@ -1033,6 +1045,7 @@ html, body {
 	margin: 0 0 40px 0;
 }
 .price_limiter_flex_item-btn {
+	align-self: flex-end;
 	padding: 9px 33px;
 	font-size: 18px;
 	font-weight: 500;
@@ -1247,7 +1260,12 @@ html, body {
 }
 @media (width<650px) {
 	.teamCards_limiter_flex {
-		width: 70%;
+		width: 80%;
+	}
+}
+@media (width<425px) {
+	.teamCards_limiter_flex {
+		width: 100%;
 	}
 }
 /* /teamCards */
@@ -1328,8 +1346,11 @@ html, body {
 	}
 }
 @media (width<410px) {
+	.arcticles_limiter_flex {
+		gap: 15px;
+	}
 	.arcticles_limiter_flex_item {
-		flex: 0 0 80%;
+		flex: 0 0 85%;
 	}
 	.arcticles_limiter_flex_item_textArea-text {
 		width: auto;
