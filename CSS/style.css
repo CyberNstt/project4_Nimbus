@@ -784,9 +784,6 @@ html, body {
 	background: #EC1D51;
 }
 @media (width<769px) {
-	.services_limiter-title {
-		margin: 0;
-	}
 	.services_limiter_flex {
 		margin: -18px 0 -50px 0;
 		flex-wrap: nowrap;
