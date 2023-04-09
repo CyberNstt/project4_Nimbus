@@ -129,10 +129,9 @@ html, body {
 }
 .header_limiter_logo-link {
 	display: block;
-	height: 100%;
 }
 .header_limiter_logo-link-imgLogo {
-	width: 8.8888889vw;
+	max-width: 128px;
 	height: auto;
 }
 /*----------------------------------*/
@@ -1141,14 +1140,15 @@ html, body {
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
 	border-radius: 50%;
 	z-index: 5;
+	transition: all 0.3s;
 }
 .teamCards_limiter_flexWithBtns-leftSwiper {
 	left: 0;
-	transform: translate(-50%, -50%);
+	transform: translate(0, -50%);
 }
 .teamCards_limiter_flexWithBtns-rightSwiper {
 	right: 0;
-	transform: translate(50%, -50%);
+	transform: translate(0, -50%);
 }
 .teamCards_limiter_flexWithBtns-leftSwiper-img {
 	transform: translate(-65%, -50%);
@@ -1168,43 +1168,42 @@ html, body {
 }
 .teamCards_limiter_flex {
 	display: flex;
-	/*	gap: 3.88%;*/
 	transition: all 0.6s;
 }
 .teamCards_limiter_flex_item {
 	flex-shrink: 0;
 	flex-grow: 0;
-	padding: 25px 30px 80px;
+	margin: 0 24px;
+	padding: 25px 30px 35px;
 	background: rgba(255, 86, 129, 0.1);
 	border-radius: 24px;
 	transition: all 0.3s;
-	border: 1px solid #e26484;
 	border-collapse: collapse;
+	overflow: hidden;
 }
 .teamCards_limiter_flex_item:hover > * {
-	transform: translate(0, -5px);
+	transform: translate(0, -10px);
 }
 .teamCards_limiter_flex_item_avatar {
 	position: relative;
 	margin: 0 0 20px 0;
 	transition: all 0.3s;
 }
-.teamCards_limiter_flex_item_avatar-img {
-	border-radius: 0px 16px 16px 0px;
-	width: 167px;
-	height: 167px;
-}
 .teamCards_limiter_flex_item_avatar::before {
 	content: '';
 	display: block;
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 27px;
+	left: -30px;
+	width: 30px;
 	height: 100%;
-	margin: 0 0 0 -27px;
 	background: #FF5681;
 	transition: all 0.3s;
+}
+.teamCards_limiter_flex_item_avatar-img {
+	border-radius: 0px 16px 16px 0px;
+	width: 167px;
+	height: 167px;
 }
 .teamCards_limiter_flex_item-name {
 	font-size: 20px;
@@ -1232,10 +1231,28 @@ html, body {
 	transition: all 0.3s;
 	max-height: 150px;
 	overflow: auto;
-	padding: 2px;
+	padding: 5px;
+	border-radius: 10px;
+	background: rgba(255, 86, 129, 0.2);
 }
-@media (width<1440px) {}
-@media (width<410px) {}
+
+@media (width<1269px) {
+	.teamCards_limiter_flexWithBtns {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.teamCards_limiter_flexWithBtns-leftSwiper, .teamCards_limiter_flexWithBtns-rightSwiper {
+		position: relative;
+		transform: translate(0, 0);
+		margin: 10px 25px;
+	}
+}
+@media (width<650px) {
+	.teamCards_limiter_flex {
+		width: 70%;
+	}
+}
 /* /teamCards */
 
 /* articles */
@@ -1315,10 +1332,10 @@ html, body {
 }
 @media (width<410px) {
 	.arcticles_limiter_flex_item {
-		width: 100%;
+		flex: 0 0 80%;
 	}
 	.arcticles_limiter_flex_item_textArea-text {
-		width: 300px;
+		width: auto;
 		max-width: 100%;
 	}
 }
