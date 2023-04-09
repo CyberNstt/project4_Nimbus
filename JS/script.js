@@ -184,8 +184,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // teamCards Slider
 let position = 0;
-const slidesToShow = 3;
+let slidesToShow = 3;
 const slidesToScroll = 1;
+let screen = document.body.clientWidth;
+if (screen < 1024) {
+	slidesToShow = 2;
+}
+if (screen < 650) {
+	slidesToShow = 1;
+}
 const btnPrev = document.querySelector('.teamCards_limiter_flexWithBtns-leftSwiper');
 const btnNext = document.querySelector('.teamCards_limiter_flexWithBtns-rightSwiper');
 const container = document.querySelector('.teamCards_limiter_flexContainer');
@@ -197,7 +204,7 @@ const movePosition = slidesToScroll * itemWidth;
 
 
 items.forEach((item) => {
-	item.style.flexBasis = `${itemWidth /*- (track.clientWidth * 0.0388)*/}px`;
+	item.style.flexBasis = `${itemWidth - 48}px`;
 });
 
 btnNext.addEventListener('click', () => {
@@ -221,9 +228,15 @@ const setPosition = () => {
 const checkBtns = () => {
 	if (position === 0) {
 		btnPrev.disabled;
+		btnPrev.style.opacity = '0.6';
+	} else {
+		btnPrev.style.opacity = '1';
 	}
 	if (position <= -(itemsCount - slidesToShow) * itemWidth) {
 		btnNext.disabled;
+		btnNext.style.opacity = '0.6';
+	} else {
+		btnNext.style.opacity = '1';
 	}
 };
 checkBtns();
