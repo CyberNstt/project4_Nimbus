@@ -443,7 +443,7 @@ html, body {
 		height: 2px;
 		background: #000;
 		position: absolute;
-		transition: 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 	.header_limiter_burger::before {
 		top: 0;
